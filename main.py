@@ -13,6 +13,7 @@ def get_vm_name():
 
 
 REPLICA_NAME = get_vm_name()
+REPLICA_VERSION = '2.0'
 
 MESSAGE_REPO = MessageRepo()
 
@@ -22,7 +23,7 @@ async def root(response: Response):
     response.headers["Access-Control-Allow-Origin"] = "*"
     response.headers["Access-Control-Allow-Credentials"] = 'true'
     messages = MESSAGE_REPO.get_all()
-    return {"replica_version": '2.0',
+    return {"replica_version": REPLICA_VERSION,
             "replica_name": REPLICA_NAME,
             "messages": sorted(messages, key=lambda m: m['timestamp'])
             }
