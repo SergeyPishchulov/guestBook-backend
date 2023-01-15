@@ -13,7 +13,7 @@ def get_vm_name():
 
 
 REPLICA_NAME = get_vm_name()
-REPLICA_VERSION = '12.0'
+REPLICA_VERSION = '1.0'
 
 MESSAGE_REPO = MessageRepo()
 
